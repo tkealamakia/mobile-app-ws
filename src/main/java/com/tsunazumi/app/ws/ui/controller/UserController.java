@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("users")
 public class UserController {
@@ -39,7 +41,7 @@ public class UserController {
           MediaType.APPLICATION_JSON_VALUE
       }
   )
-  public ResponseEntity<UserRest> createUser(@RequestBody UserDetailsRequestModel userDetails) {
+  public ResponseEntity<UserRest> createUser(@Valid @RequestBody UserDetailsRequestModel userDetails) {
     UserRest returnValue = new UserRest();
     returnValue.setEmail(userDetails.getEmail());
     returnValue.setFirstName(userDetails.getFirstName());
