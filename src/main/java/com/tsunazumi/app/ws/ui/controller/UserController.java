@@ -54,7 +54,8 @@ public class UserController {
     returnValue.setFirstName(userDetails.getFirstName());
     returnValue.setLastName(userDetails.getLastName());
 
-    String userId = UUID.randomUUID().toString();
+//    String userId = UUID.randomUUID().toString();
+    String userId = "1";
     returnValue.setUserId(userId);
     if (users == null) {
       users = new HashMap<>();
